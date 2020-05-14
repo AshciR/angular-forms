@@ -10,6 +10,7 @@ import { EnrollmentService } from './enrollment.service';
 export class AppComponent {
   topics: string[] = ['Angular', 'React', 'Vue'];
   topicHasError: boolean = true;
+  submitted: boolean = false;
 
   userModel = new User(
     'Richie',
@@ -28,6 +29,7 @@ export class AppComponent {
 
   public onSubmit() {
     console.log(this.userModel);
+    this.submitted = true;
     this._enrollmentService.enroll(this.userModel)
       .subscribe(
         data => console.log("Success!", data),

@@ -2,7 +2,7 @@
 
     <h1>Bootcamp Enrollment Form</h1>
 
-    <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <form #userForm="ngForm" *ngIf="!submitted" (ngSubmit)="onSubmit()" novalidate>
 
         <p>
             UserForm value variable {{userForm.value | json}}
